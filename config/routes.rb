@@ -3,6 +3,7 @@ Fly2cozumel::Application.routes.draw do
   
   resources :galleries
 
+  
   root :to => 'pages#inicio'
   match '/inicio', :to => 'pages#inicio'
   match '/nosotros', :to => 'pages#nosotros'
@@ -12,6 +13,8 @@ Fly2cozumel::Application.routes.draw do
   match '/instalaciones',   :to => 'pages#instalaciones'
   match '/galeria',    :to => 'pages#galeria'
   match '/livecamera',    :to => 'pages#livecamera'
+
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

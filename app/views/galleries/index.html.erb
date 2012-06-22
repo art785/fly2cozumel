@@ -1,3 +1,4 @@
+
 <h1>Listing galleries</h1>
 
 <table>
@@ -13,6 +14,7 @@
   <tr>
     <td><%= gallery.title %></td>
     <td><%= gallery.description %></td>
+    <%= image_tag @gallery.photo.url %>
     <td><%= link_to 'Show', gallery %></td>
     <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
     <td><%= link_to 'Destroy', gallery, confirm: 'Are you sure?', method: :delete %></td>
@@ -22,5 +24,6 @@
 
 <br />
 
-<%= link_to 'New Gallery', new_gallery_path %>
+<%= link_to 'New Gallery', new_gallery_path(:format => :js), :remote => true  %>
+<%= link_to 'lista', galleries_path(:format => :js), :remote => true  %>
 

@@ -7,6 +7,7 @@ class GalleriesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @galleries }
+      format.js
     end
   end
 
@@ -18,6 +19,7 @@ class GalleriesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @gallery }
+      format.js
     end
   end
 
@@ -29,6 +31,7 @@ class GalleriesController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @gallery }
+      format.js
     end
   end
 
@@ -44,11 +47,13 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       if @gallery.save
-        format.html { redirect_to @gallery, notice: 'Gallery was successfully created.' }
+        format.html { redirect_to action: "new", notice: 'Gallery was successfully created.' }
         format.json { render json: @gallery, status: :created, location: @gallery }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @gallery.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -62,9 +67,11 @@ class GalleriesController < ApplicationController
       if @gallery.update_attributes(params[:gallery])
         format.html { redirect_to @gallery, notice: 'Gallery was successfully updated.' }
         format.json { head :no_content }
+        format.js
       else
         format.html { render action: "edit" }
         format.json { render json: @gallery.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
