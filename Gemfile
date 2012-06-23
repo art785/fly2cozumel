@@ -10,6 +10,10 @@ gem 'sqlite3'
 gem 'therubyracer'
 gem 'jquery-rails'
 gem 'fancybox-rails', :git => 'https://github.com/sverigemeny/fancybox-rails'
+<<<<<<< HEAD
+=======
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+>>>>>>> b02c951f7a3d0c1cd358bdba56edccebc652110e
 
 group :development, :test do
   gem 'rspec-rails',      ">= 2.0.0.beta"
