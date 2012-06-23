@@ -1,14 +1,16 @@
 <nav class="navegacion">
 <ul>
-<li><%= link_to "Inicio", root_path %></li>
-<li><%= link_to "Nosotros", nosotros_path %></li>
-<li><%= link_to "Aeroshow", aeroshow_path %></li>
-<li><%= link_to "Cursos", cursos_path %></li>
-<li><%= link_to "Prensa", prensa_path %></li>
-<li><%= link_to "Instalaciones", instalaciones_path %></li>
-<li><%= link_to "Galeria", galeria_path %></li>
-<li><%= link_to "Livecamera", livecamera_path %></li>
+<li><%= link_to image_tag( 'wallpapers/menu/inicio.png',:mouseover => 'wallpapers/menu/verde-inicio.png'), inicio_path(:format => :js), :remote => true %></li>
+<li><%= link_to image_tag( 'wallpapers/menu/nosotros.png',:mouseover => 'wallpapers/menu/azul-nosotros.png'), nosotros_path(:format => :js), :remote => true %></li>
+<li><%= link_to image_tag( 'wallpapers/menu/aeroshow.png',:mouseover => 'wallpapers/menu/verde-aeroshow.png'), aeroshow_path(:format => :js), :remote => true%></li>
+<li><%= link_to image_tag( 'wallpapers/menu/cursos.png',:mouseover => 'wallpapers/menu/azul-cursos.png'), cursos_path(:format => :js), :remote => true %></li>
+<li><%= link_to image_tag( 'wallpapers/menu/prensa.png',:mouseover => 'wallpapers/menu/verde-prensa.png'), prensa_path(:format => :js), :remote => true %></li>
+<li><%= link_to image_tag( 'wallpapers/menu/instalaciones.png',:mouseover => 'wallpapers/menu/azul-instalaciones.png'), instalaciones_path(:format => :js), :remote => true %></li>
+<li><%= link_to image_tag( 'wallpapers/menu/galeria.png',:mouseover => 'wallpapers/menu/verde-galeria.png'), galeria_path(:format => :js), :remote => true %></li>
+<li><%= link_to image_tag( 'wallpapers/menu/livecamera.png',:mouseover => 'wallpapers/menu/azul-livecamera.png'), livecamera_path(:format => :js), :remote => true %></li>
 </ul>
 </nav>
+
+
 
 
