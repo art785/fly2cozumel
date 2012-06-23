@@ -2,6 +2,7 @@ Fly2cozumel::Application.routes.draw do
   
   
   root :to => 'pages#inicio'
+  match '/inicio', :to => 'pages#inicio'
   match '/nosotros', :to => 'pages#nosotros'
   match '/aeroshow',   :to => 'pages#aeroshow'
   match '/cursos',    :to => 'pages#cursos'
