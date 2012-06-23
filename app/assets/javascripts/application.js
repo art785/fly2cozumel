@@ -11,5 +11,19 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require fancybox
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function() {
+    $("a.fancybox").fancybox({
+        'autoDimensions'        : false,
+        'autoScale'             : false,
+        'width'                 : 800,
+        'height'                : 700,
+        'scrolling'             : 'no',
+        'type'                  : 'image'
+    });
+});
+
