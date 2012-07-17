@@ -1,0 +1,12 @@
+<%- model_class = @ticket.class -%>
+<div class="page-header">
+  <h1>Nuevo cupon</h1>
+</div>
+<%= link_to "Horarios ultramar", image_path('wallpapers/boletos/horariou.jpg'), :class =>"fancybox", :size => "200x200" %>
+<%= link_to "Horarios Barcos mexico", image_path('wallpapers/boletos/horariob.jpg'), :class =>"fancybox", :size => "200x200" %>
+
+<div id="cupon-form">
+<%= render :partial => 'form' %>
+</div>
+
+

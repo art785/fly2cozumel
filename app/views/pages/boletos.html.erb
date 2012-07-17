@@ -1,0 +1,34 @@
+
+<section id="secmod">
+	<header id="hmod">
+    <% if flash[:notice] %>
+      <div id="flash">
+        <p>
+         <%= flash[:notice] %>
+        </p> 
+      </div>
+    <% end %>
+    <div id='user_nav_bol'>
+      <% if user_signed_in? %>
+        <p>
+          Bienvenido a la seccion para generar cupones de descuento<br>
+          Session iniciada como  <%= current_user.email %>. <%= link_to image_tag( 'wallpapers/botones/terminar-sesion.png'),destroy_user_session_path , :method => :delete, :remote => true %>
+        </p>
+      <%else%>
+        <p>
+          Bienvenido ala seccion para generar cupones de descuento <br>
+          Para generar cupones debes registrarte 
+        </p>
+      <%end%>
+    </div>
+
+  </header>
+	<article id="bolart1"> 
+
+    <%= link_to image_tag( 'wallpapers/botones/nuevo-cupon.png'), new_ticket_path(:format => :js), :remote => true %>
+    <%= link_to image_tag( 'wallpapers/botones/ver-mis-cupones.png'), cupones_path(:controller => "tickets", :action => "cupones" ,:format => :js), :remote => true %>		
+
+    <%= link_to "Añadir roles", new_role_path(:format => :js), :remote => true %>
+     <%= link_to "Ver roles", roles_path(:format => :js), :remote => true %>
+	</article>
+</section>

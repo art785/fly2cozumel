@@ -1,7 +1,14 @@
 Fly2cozumel::Application.routes.draw do
   
   
+  resources :tickets
+
+  resources :roles
+
+  devise_for :users ,:controllers => { :registrations => "registrations", :sessions => "sessions" }
+
   root :to => 'pages#inicio'
+  match '/inicio', :to => 'pages#inicio'
   match '/nosotros', :to => 'pages#nosotros'
   match '/aeroshow',   :to => 'pages#aeroshow'
   match '/cursos',    :to => 'pages#cursos'
@@ -9,6 +16,8 @@ Fly2cozumel::Application.routes.draw do
   match '/instalaciones',   :to => 'pages#instalaciones'
   match '/galeria',    :to => 'pages#galeria'
   match '/livecamera',    :to => 'pages#livecamera'
+  match '/boletos',    :to => 'pages#boletos'
+  match '/cupones',    :to => 'tickets#cupones'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

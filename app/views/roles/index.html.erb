@@ -1,0 +1,15 @@
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for role in @roles %>
+    <tr>
+      <td><%= role.name %></td>
+      <td><%= link_to "Editar rol", edit_role_path(role) %></td>
+      <td><%= link_to "Eliminar rol", role, :confirm => 'Estas seguro?', :method => :delete, :remote => true %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "Añadir roles", new_role_path(:format => :js), :remote => true %>

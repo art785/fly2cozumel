@@ -1,0 +1,33 @@
+
+
+<% if flash[:notice] %>
+  <p>
+    <div id="flash"><%= flash[:notice] %></div>
+  </p>
+<% end %>
+<h2>Registro</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :remote => true) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password,"contraseña" %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation,"confirmacion de contraseña" %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.label :role,"seleccione un rol" %><br />
+  <% for role in Role.find(:all) %>
+    <div>
+      <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+      <%= role.name %>
+    </div>
+  <% end %>
+
+  <div><%= f.submit "Resgistrarme" %></div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

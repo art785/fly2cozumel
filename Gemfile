@@ -1,51 +1,47 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.3'
 
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
 gem 'therubyracer'
+gem 'jquery-rails'
+gem 'fancybox-rails', :git => 'https://github.com/sverigemeny/fancybox-rails'
+gem 'nifty-generators', :git => 'https://github.com/ryanb/nifty-generators.git'
+gem 'devise'
+gem "cancan"
+gem 'pdfkit'
+gem 'wkhtmltopdf-binary'
+gem "twitter-bootstrap-rails"
 
+
+#Gemas usadas en el entorno de desarrollo
 group :development, :test do
-  gem 'rspec-rails',      ">= 2.0.0.beta"
+  gem 'sqlite3'
+  gem "rspec-rails", "~> 2.0"
 
 end
-
+# Gemas usadas en el entorno de pruebas
 group :test do
+  gem 'spork', '0.8.4'
+  gem "rspec-rails", "~> 2.0"
+  gem 'webrat'
+end
 
-gem 'spork', '0.8.4'
+# Gemas instaladas para el entorno de produccion
+group :production do
+	gem 'thin'
+	gem 'pg', '0.12.2'
 end
 
 
 # Gems used only for assets and not required
-# in production environments by default.
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  
+  gem 'uglifier', '>= 1.0.3' 
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
-
-  gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem "mocha", :group => :test

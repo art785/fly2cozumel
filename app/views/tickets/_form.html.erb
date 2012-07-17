@@ -1,0 +1,31 @@
+<%= form_for @ticket, :html => { :class => 'form-horizontal' }, :remote =>true do |f| %>
+  <div class="control-group">
+    <%= f.label :Nombre, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :Edad, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :age, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :Naviera, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :navy, options_for_select([["Ultramar", "Ultramar"], ["Barcos mexico", "Barcos mexico"]]), :class => 'text_field' %>
+    </div>
+
+  </div>
+  <div class="control-group">
+    <%= f.label :Fecha, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :date, :class => 'date_select' %>
+    </div>
+  </div>
+  
+  <div class="form-actions">
+    <%= f.submit "Crear cupon", :class => 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<h1>Cupones de descuento</h1>
+<table  class="table table-striped">
+   <thead>
+  <tr>
+    <th>Nombre</th>
+    <th>Edad</th>
+    <th>Naviera</th>
+    <th>Fecha de viaje</th>
+   
+  </tr>
+  </thead>
+   <tbody>
+  <% for ticket in @tickets %>
+    <tr>
+      <td><%= ticket.name %></td>
+      <td><%= ticket.age %></td>
+      <td><%= ticket.navy %></td>
+      <td><%= ticket.date %></td>
+     
+      <td> <%= link_to image_tag( 'wallpapers/botones/generar-cupon.png'), ticket_path(ticket),:remote => true%></td>
+    
+      <%if can? :update,@ticket%>
+        <td><%= link_to "Edit", edit_ticket_path(ticket) %></td>
+      <%end%>
+      <%if can? :destroy,@ticket%>
+      <td><%= link_to "Destroy", ticket, :confirm => 'Are you sure?', :method => :delete , :remote => true%></td>
+      <% end -%>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to image_tag( 'wallpapers/botones/nuevo-cupon.png'), new_ticket_path(:format => :js), :remote => true %></p>
+<p><%= link_to image_tag( 'wallpapers/botones/menu-cupones.png'), boletos_path(:format => :js), :remote => true %></p>

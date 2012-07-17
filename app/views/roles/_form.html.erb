@@ -1,0 +1,15 @@
+<% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= form_for @role , :remote => true  do |f| %>
+ 
+  <% @role.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+   <% end %>
+  <div class="field">
+    <%= f.label :name ,'Nombre del rol' %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions"><%= f.submit %></div>
+<% end %>
