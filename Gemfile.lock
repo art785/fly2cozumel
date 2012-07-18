@@ -1,10 +1,13 @@
 GIT
+<<<<<<< HEAD
   remote: https://github.com/ryanb/nifty-generators.git
   revision: a453b7dd7766d1e6f75dd9ee80dc69ce3c07e811
   specs:
     nifty-generators (0.4.6)
 
 GIT
+=======
+>>>>>>> 4ae6b9827ccd87f6b0493b538e844827ea53964a
   remote: https://github.com/sverigemeny/fancybox-rails
   revision: 17db886581f38fbcd4b0ac0349fc9493554ee261
   specs:
@@ -174,7 +177,10 @@ PLATFORMS
 DEPENDENCIES
   cancan
   coffee-rails (~> 3.2.1)
+<<<<<<< HEAD
   devise
+=======
+>>>>>>> 4ae6b9827ccd87f6b0493b538e844827ea53964a
   fancybox-rails!
   jquery-rails
   mocha

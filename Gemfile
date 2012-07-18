@@ -12,7 +12,6 @@ gem 'pdfkit'
 gem 'wkhtmltopdf-binary'
 gem "twitter-bootstrap-rails"
 
-
 #Gemas usadas en el entorno de desarrollo
 group :development, :test do
   gem 'sqlite3'
